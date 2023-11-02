@@ -11,12 +11,10 @@ function createList() {
         for(let i = 1; i < listCount; i++) {
             const checkValue = document.getElementById(`list${i}`);
             if (checkValue == null) {
-                console.log('hello');
                 list.id = `list${i}`;
                 button.id = `close${i}`;
                 break;
             } else if (i == listCount - 1) {
-                console.log('goodbye');
                 list.id = `list${listCount}`;
                 button.id = `close${listCount}`;
                 listCount++;
@@ -24,7 +22,6 @@ function createList() {
             }
         }
     }
-    console.log(listCount);
     list.textContent = document.getElementById('textbox').value;
     button.type = 'button';
     button.value = 'X';
@@ -54,7 +51,6 @@ function clearList() {
 
 function clearToDo(test) {
     const value = test.target.id;
-    console.log(value);
     const numRegex = /\d+/;
     const num = value.match(numRegex);
     const number = num[0];
