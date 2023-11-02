@@ -5,7 +5,7 @@ function createList() {
     const button = document.createElement('input');
     if (listCount == 1) {
         list.id = `list${listCount}`;
-        button.id = `list${listCount}`;
+        button.id = `close${listCount}`;
         listCount++;
     } else {
         for(let i = 1; i < listCount; i++) {
@@ -35,24 +35,24 @@ function createList() {
     }
 
 function clearList() {
-    for (let i = 1; i < listCount + 1; i++) {
+    for (let i = 1; i < listCount; i++) {
     const startList = document.getElementById('to-do_list');
     const childList = document.getElementById(`list${i}`);
     const childButton = document.getElementById(`close${i}`);
     startList.removeChild(childButton);
     startList.removeChild(childList);
     }
-    return listCount = 0;
+    return listCount = 1;
 }
 
 
 
 function clearToDo(test) {
     const value = test.target.id;
+    console.log(value);
     const numRegex = /\d+/;
     const num = value.match(numRegex);
     const number = num[0];
-    console.log(number);
     const startList = document.getElementById('to-do_list');
     const childList = document.getElementById(`list${number}`);
     const childButton = document.getElementById(`close${number}`);
