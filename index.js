@@ -36,11 +36,16 @@ function createList() {
 
 function clearList() {
     for (let i = 1; i < listCount; i++) {
-    const startList = document.getElementById('to-do_list');
-    const childList = document.getElementById(`list${i}`);
-    const childButton = document.getElementById(`close${i}`);
-    startList.removeChild(childButton);
-    startList.removeChild(childList);
+        const checkValue = document.getElementById(`list${i}`)
+        if (checkValue == null) {
+
+        } else {
+        const startList = document.getElementById('to-do_list');
+        const childList = document.getElementById(`list${i}`);
+        const childButton = document.getElementById(`close${i}`);
+        startList.removeChild(childButton);
+        startList.removeChild(childList);
+        }
     }
     return listCount = 1;
 }
