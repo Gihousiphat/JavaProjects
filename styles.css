@@ -23,6 +23,13 @@
     margin-top:100px;
 }
 
-input {
+.user_input input {
     margin-bottom:200px;
+}
+
+.to-do_list {
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    height:20px;
 }
