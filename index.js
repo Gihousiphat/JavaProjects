@@ -5,10 +5,11 @@ function createList() {
     listCount++;
     list.id = `list${listCount}`;
     list.textContent = document.getElementById('textbox').value;
-    const button = document.createElement('input');
+    let button = document.createElement('input');
     button.id = `close${listCount}`;
     button.type = 'button';
     button.value = 'X';
+    button.addEventListener('click', clearListItem);
     orderedList.appendChild(list);
     orderedList.appendChild(button);
     
@@ -26,3 +27,15 @@ function clearList() {
 }
 
 
+
+function clearListItem(test) {
+    const value = test.target.id;
+    const numRegex = /\d+/;
+    const num = value.match(numRegex);
+    const number = num[0];
+    const startList = document.getElementById('to-do_list');
+    const childList = document.getElementById(`list${number}`);
+    const childButton = document.getElementById(`close${number}`);
+    startList.removeChild(childButton);
+    startList.removeChild(childList);
+}
